@@ -1,105 +1,91 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  :root {
-    --colorOne: rgb(134, 142, 153);;
-    --colorTwo: rgb(43, 43, 43);
-  }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 
-  body {
-    background: rgb(134, 142, 153);
-    overflow: hidden;
-  }
-  
-  nav {
-    padding: 25px 25px;
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr auto;
-    font-family: Arial, Helvetica, sans-serif;
-    gap: 25px;
-  }
-  
-  nav ul {
-    flex-wrap: wrap;
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 30px;
-    gap: 35px;
-    flex-direction: row-reverse;
-  }
-  
-  nav ul li {
-    display: inline-block;
-  }
-  
-  nav ul li a {
-    font-size: 2rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: var(--colorTwo);
-    outline-color: currentColor;
-    font-style: italic;
-    letter-spacing: 0.15rem;
-    cursor: default;
-  }
-  
-  .container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+:root {
+  --colorOne: rgb(134, 142, 153);
+  --colorTwo: rgb(43, 43, 43);
+}
 
-  .calculator {
-    background: var(--colorTwo);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px;
-  }
+body {
+  background: rgb(134, 142, 153);
+  overflow: hidden;
+}
 
-  .calculator form input{
-    border: 0;
-    outline: 0;
-    width: 60px;
-    height: 60px;
-    border-radius: 10px;
-    box-shadow: 1px 5px 20px rgba(255, 255, 255, 0.1);
-    background: transparent;
-    font-size: 20px;
-    color: #fff;
-    cursor: pointer;
-    margin: 10px;
-  }
+nav {
+  padding: 25px 25px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto;
+  font-family: Arial, Helvetica, sans-serif;
+  gap: 25px;
+}
 
-  form .display {
-    display: flex;
-    justify-content: flex-end;
-    margin: 20px 0px;
-  }
+nav ul {
+  flex-wrap: wrap;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 30px;
+  gap: 35px;
+  flex-direction: row-reverse;
+}
 
-  form .display input {
-    text-align: right;
-    flex: 1;
-    font-size: 45px;
-    box-shadow: none;
-    background: #e0e0e0;
-    border-radius: 3px;
-    padding: 0px 10px;
-    color: var(--colorTwo);
-  }
+nav ul li {
+  display: inline-block;
+}
 
-  form input.equal {
-    width: 145px;
-  }
+nav ul li a {
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--colorTwo);
+  outline-color: currentColor;
+  font-style: italic;
+  letter-spacing: 0.15rem;
+  cursor: default;
+}
 
-  form input.operator {
-    color: rgb(92, 253, 92);
-  }
+.container{
+  max-width: 300px;
+  margin-inline: auto;
+}
 
+.calculator{
+  margin-inline: auto;
+  display: grid;
+  padding: 0.7rem;
+  border-radius: 7.5px ;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 1rem;
+  background-color: var(--colorTwo);
+  > input[type="text"] { grid-column: 1 / -1; text-align: right }
+  > input[type="button"]:not(:last-child) { aspect-ratio: 1 / 1 }
+  > input[type="button"]:last-child { grid-column-end: span 2}
+}
+
+input {
+  background-color: var(--colorTwo);
+  box-shadow: 0px 0px 5px rgb(127 127 127 / 50%);  
+  border: none;
+  outline: none;
+  border-radius: 0.6rem;
+  color: #fff;
+}
+
+input[name="display"] {
+  background-color: rgb(134, 142, 153);
+  box-shadow: none;
+  border-radius: 5px;
+  font-size: 2rem;
+  padding: 0 0.5rem;
+  color: rgb(255, 255, 255);
+}
+
+.operator, .equal {
+  color: rgb(139, 255, 139);
+}
