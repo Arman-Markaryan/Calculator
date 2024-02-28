@@ -79,7 +79,7 @@ input {
 }
 
 input[name="display"] {
-  background-color: rgb(134, 142, 153);
+  background-color: rgb(154 155 157);
   box-shadow: none;
   border-radius: 5px;
   font-size: 2rem;
